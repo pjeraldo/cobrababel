@@ -63,7 +63,10 @@ def translate(model, reaction_xref_file_name, metabolite_xref_file_name, from_na
     
     ''' replacing the name space ids for metabolites using  dictionary '''
     out_metabolites = output_model.metabolites
-    suffix = re.compile(r'_([ce])$')        
+    ''' match has to probably be the last underscore to make it generic 
+	probably using a negative look ahead for more complicated
+	compartments. For now using the Recon2 compartments'''
+    suffix = re.compile(r'_([ceglmnrx])$')        
     metabolites_not_found_in_Xref = []
     metabolites_found_in_Xref = []
     metabolites_already_converted = []
