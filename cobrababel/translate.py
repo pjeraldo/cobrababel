@@ -75,7 +75,7 @@ def translate(model, reaction_xref_file_name, metabolite_xref_file_name, from_na
             #o_m=out_metabolites[0]
             s = o_m.id 
             #me,su,ex = re.split(suffix,s)
-	    me,su= s.rsplit("_",1)
+            me,su= s.rsplit("_",1)
             if me in metabolite_seed2vmh_dict.keys():
                 v = metabolite_seed2vmh_dict[me].strip()
                 o_m.id = v + "_" + su
